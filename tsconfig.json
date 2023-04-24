@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "sourceMap": true,
+    "strict": true,
+    "esModuleInterop": true,
+    "baseUrl": "./src",
+    "module": "commonjs",
+    "inlineSources": true,
+    "declaration": true,
+    "target": "ES2017",
+    "moduleResolution": "node",
+    "skipLibCheck": true,
+    "outDir": "srv",
+    "lib": ["esnext", "dom"],
+    "paths": {
+      "*": ["srv"]
+    },
+    "forceConsistentCasingInFileNames": true
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "srv"]
+}

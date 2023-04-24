@@ -1,0 +1,45 @@
+{
+  "name": "rest-express",
+  "version": "1.0.0",
+  "license": "MIT",
+  "scripts": {
+    "build": "npm run eslint && npm run build:ts",
+    "build:tests": "npm run eslint && tsc -p tsconfig.test.json",
+    "build:ts": "tsc ",
+    "watch:ts": "tsc -w",
+    "eslint": "eslint -c .eslintrc.js --ext [.ts,.tsx,.js,.jsx] .",
+    "eslint:fix": "eslint -c .eslintrc.js --fix --ext [.ts,.tsx,.js,.jsx] .",
+    "start": "node srv/index.js",
+    "watch": "concurrently --kill-others  \"npm run eslint  & tsc -w & npm run nm\"",
+    "watch:debug": "concurrently --kill-others \"npm run eslint  & tsc -w & npm run nm:debug\"",
+    "nm": "nodemon srv/index.js",
+    "nm:debug": "nodemon --inspect srv/index.js",
+    "gen_db_client": "prisma generate",
+    "migrate_dev": "prisma migrate dev"
+  },
+  "dependencies": {
+    "@prisma/client": "4.11.0",
+    "dotenv": "^16.0.3",
+    "express": "4.18.2",
+    "puppeteer": "^19.7.3"
+  },
+  "devDependencies": {
+    "@types/dotenv": "^8.2.0",
+    "@types/express": "4.17.17",
+    "@types/node": "18.14.6",
+    "@typescript-eslint/eslint-plugin": "^5.54.1",
+    "@typescript-eslint/eslint-plugin-tslint": "^5.54.1",
+    "@typescript-eslint/parser": "^5.54.1",
+    "concurrently": "^7.6.0",
+    "eslint": "^8.35.0",
+    "eslint-config-prettier": "^8.7.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-jsdoc": "^40.0.1",
+    "eslint-plugin-prefer-arrow": "^1.2.3",
+    "eslint-plugin-switch-case": "^1.1.2",
+    "eslint-plugin-unused-imports": "^2.0.0",
+    "nodemon": "^2.0.21",
+    "prisma": "4.11.0",
+    "typescript": "4.9.5"
+  }
+}
